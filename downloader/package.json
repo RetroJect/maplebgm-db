@@ -1,0 +1,16 @@
+{
+  "name": "downloader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "mp3tag.js": "^3.11.0",
+    "queue": "^7.0.0",
+    "yt-dlp-wrap": "^2.3.12"
+  }
+}
