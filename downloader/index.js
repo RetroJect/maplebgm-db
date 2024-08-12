@@ -67,7 +67,6 @@ const downloadEntry = async (downloader, file) => {
   // Remove all non-word characters from filename
   const fileName = file.filename.replaceAll(/\W/g, '');
 
-  // console.log(`Creating output directory for ${file.databaseFile.name}: ${outputDir}`);
   await fs.promises.mkdir(outputDir,{ recursive: true });
 
   console.log(`Downloading track "${path.join(databaseFileName, fileName)}"`);
@@ -172,7 +171,6 @@ const main = async () => {
   const downloadQueue = new Queue({ concurrency: MAX_DOWNLOAD, autostart: false });
 
   const downloadFunctions = tracks.map((track) => (() => downloadEntry(downloader, track)));
-  // downloadFunctions[0]();
 
   downloadQueue.push(...downloadFunctions);
   downloadQueue.start((error) => {
